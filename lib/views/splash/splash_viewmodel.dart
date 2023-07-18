@@ -7,6 +7,7 @@ class SplashViewModel extends BaseViewModel {
   bool isInit = false;
   bool loading = false;
   late bool firstRun;
+
   @override
   void setContext(BuildContext context) => this.context = context;
 
