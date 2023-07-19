@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
+class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
   const AppBarCustom({
     Key? key,
     required this.title,
@@ -19,15 +19,16 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
-      leading: showBackButton != null && showBackButton == true ? InkWell(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
-          child: Padding(
-            padding:  EdgeInsets.all(6.0.sp),
-            child: const Icon(Icons.arrow_circle_left_sharp)
-          ),
-          ) : SizedBox(),
+      leading: showBackButton != null && showBackButton == true
+          ? InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Padding(
+                  padding: EdgeInsets.all(6.0.sp),
+                  child: const Icon(Icons.arrow_circle_left_sharp)),
+            )
+          : SizedBox(),
       elevation: 0,
       title: title != null
           ? Center(
@@ -39,7 +40,11 @@ class AppBarCustom extends StatelessWidget with PreferredSizeWidget {
             )
           : const Text(""),
       actionsIconTheme: IconThemeData(),
-      actions: [SizedBox(width: 40.w,)],
+      actions: [
+        SizedBox(
+          width: 40.w,
+        )
+      ],
       centerTitle: true,
       toolbarHeight: 40.sp,
     );

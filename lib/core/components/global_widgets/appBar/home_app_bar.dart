@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../constants/color_constants.dart';
 import '../../../init/provider/theme_provider.dart';
 
-class AppBarHome extends StatelessWidget with PreferredSizeWidget {
+class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
   const AppBarHome({
     Key? key,
     required this.title,
@@ -30,15 +30,20 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
       ),
       automaticallyImplyLeading: true,
       leading: IconButton(
-        onPressed: () {
-          onTap!();
-        },
-        icon: Icon(Icons.menu,size: 20.h,)
-      ),
+          onPressed: () {
+            onTap!();
+          },
+          icon: Icon(
+            Icons.menu,
+            size: 20.h,
+          )),
       elevation: 0,
       actions: [
         IconButton(
-          icon:  Icon(Icons.info,size: 20.h,),
+          icon: Icon(
+            Icons.info,
+            size: 20.h,
+          ),
           onPressed: () {},
         ),
       ],
