@@ -1,7 +1,6 @@
 // MVVM Design Pattern kullanıldı.
 
-// İsteklerde, müşteri detay sayfasındaki makalenin hepsini görmek istiyor yazılmış ama gelen datanın içinde makale içeriği
-// yok sadece link var, ve bu linkten html'e ulaşabiliyorum ama html'i parçalayamadım sadece makale içeriği olarak o yüzden detaydaki görüntü biraz kötü gözüküyor.
+// İsteklerde, müşteri detay sayfasındaki makalenin hepsini görmek istiyor yazılmış ama gelen datanın içinde makale içeriği yok sadece link var, ve bu linkten html'e ulaşabiliyorum ama html'i parçalayamadım sadece makale içeriği olarak o yüzden detaydaki görüntü biraz kötü gözüküyor.
 
 // UI test ve Unit testler eksik vaktim kısıtlı, müsait değilim maalesef o yüzden yapamadım.
 
