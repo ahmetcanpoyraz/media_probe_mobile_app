@@ -35,16 +35,10 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
     return ChangeNotifierProvider<T>.value(
       value: model,
       child: Consumer<T>(
-        builder: (context, model, Widget? child) => model.isLoading
-            ? const Scaffold(
-                body: Center(
-                  child: CircularProgressIndicator(),
-                ),
-              )
-            : OrientationPage(
-                portraitPage: widget.portraitOnPageBuilder(context, model, child),
-                landspacePage: widget.landscapeOnPageBuilder(context, model, child),
-              ),
+        builder: (context, model, Widget? child) => OrientationPage(
+          portraitPage: widget.portraitOnPageBuilder(context, model, child),
+          landspacePage: widget.landscapeOnPageBuilder(context, model, child),
+        ),
       ),
     );
   }

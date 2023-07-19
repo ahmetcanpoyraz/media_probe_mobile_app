@@ -7,6 +7,7 @@ class DetailViewModel extends BaseViewModel {
   bool isInit = false;
   Results? selectedResult;
   String? htmlContent;
+  bool loading = true;
 
   @override
   void setContext(BuildContext context) => this.context = context;
@@ -14,11 +15,12 @@ class DetailViewModel extends BaseViewModel {
   @override
   Future<void> init() async {
     htmlContent = "";
-    await loadHtmlContent();
+    loading = true;
     if (!isInit) {
       changeStatus();
       isInit = !isInit;
     }
+    await loadHtmlContent();
   }
 
   Future<String> fetchHtmlFromUrl(String url) async {
@@ -41,10 +43,16 @@ class DetailViewModel extends BaseViewModel {
     } catch (e) {
       debugPrint('Error: $e');
     }
+    changeLoading(false);
   }
 
   Future<void> changeSelectedResult(Results value) async {
     selectedResult = value;
+    notifyListeners();
+  }
+
+  void changeLoading(bool value) async {
+    loading = value;
     notifyListeners();
   }
 }

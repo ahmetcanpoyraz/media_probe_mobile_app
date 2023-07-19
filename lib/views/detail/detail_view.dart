@@ -24,21 +24,25 @@ class DetailView extends StatelessWidget {
             title: "Detail",
             showBackButton: true,
           ),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 30.h,
+          body: viewModel.loading
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        HtmlWidget(
+                          viewModel.htmlContent!,
+                        ),
+                      ],
+                    ),
                   ),
-                  HtmlWidget(
-                    viewModel.htmlContent!,
-                  ),
-                ],
-              ),
-            ),
-          )),
+                )),
       landscapeOnPageBuilder: (context, viewModel, _) => const SizedBox(),
     );
   }

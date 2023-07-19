@@ -27,15 +27,17 @@ class _HomeViewState extends State<HomeView> {
       portraitOnPageBuilder: (context, viewModel, _) => Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: HomeAppBar(viewModel: viewModel),
-          body: !viewModel.searchBoolean
-              ? ItemListWidget(
-                  viewModel: viewModel,
-                  list: viewModel.mostPopularList,
-                )
-              : ItemListWidget(
-                  viewModel: viewModel,
-                  list: viewModel.searchList,
-                )),
+          body: viewModel.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : !viewModel.searchBoolean
+                  ? ItemListWidget(
+                      viewModel: viewModel,
+                      list: viewModel.mostPopularList,
+                    )
+                  : ItemListWidget(
+                      viewModel: viewModel,
+                      list: viewModel.searchList,
+                    )),
       landscapeOnPageBuilder: (context, viewModel, _) => const SizedBox(),
     );
   }

@@ -10,7 +10,6 @@ import '../../core/init/use_cases/alert_dialog_helper.dart';
 
 class HomeViewModel extends BaseViewModel {
   bool isInit = false;
-  bool loading = false;
   List<Results>? mostPopularList;
   bool searchBoolean = false;
   List<Results> searchList = [];
