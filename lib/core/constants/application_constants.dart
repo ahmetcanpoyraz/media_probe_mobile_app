@@ -1,8 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 class ApplicationConstants {
-  static const SEHIR_PANOSU_API_URL = "https://sehirpanosuidentityserver.izmir.bel.tr";
-  static const BASE_URL = "https://testdidar.izmir.bel.tr/api/";
-
-
+  static const BASE_URL = "https://api.nytimes.com/";
+  static const API_KEY = "hyZY2O6GneUzXwF1bzqr9IGFzsM4Bn3K";
 }

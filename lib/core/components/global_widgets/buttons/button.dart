@@ -23,20 +23,19 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text(
-        text!,
-        style: Theme.of(context).textTheme.subtitle2,
-      ),
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all<Size>(Size(width, height)),
         elevation: MaterialStateProperty.all<double>(0.0),
-        backgroundColor: MaterialStateProperty.all<Color>(
-            Theme.of(context).colorScheme.primary),
+        backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primary),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0.sp),
           ),
         ),
+      ),
+      child: Text(
+        text!,
+        style: Theme.of(context).textTheme.titleSmall,
       ),
     );
   }

@@ -4,10 +4,8 @@ import '../../components/changeOrientation/orientation_page.dart';
 import '../base_viewmodel/base_viewmodel.dart';
 
 class BaseView<T extends BaseViewModel> extends StatefulWidget {
-  final Widget Function(BuildContext context, T value, Widget?)
-      portraitOnPageBuilder;
-  final Widget Function(BuildContext context, T value, Widget?)
-      landscapeOnPageBuilder;
+  final Widget Function(BuildContext context, T value, Widget?) portraitOnPageBuilder;
+  final Widget Function(BuildContext context, T value, Widget?) landscapeOnPageBuilder;
   final T viewModel;
   final Function(T model) onModelReady;
   const BaseView(
@@ -44,10 +42,8 @@ class _BaseViewState<T extends BaseViewModel> extends State<BaseView<T>> {
                 ),
               )
             : OrientationPage(
-                portraitPage:
-                    widget.portraitOnPageBuilder(context, model, child),
-                landspacePage:
-                    widget.landscapeOnPageBuilder(context, model, child),
+                portraitPage: widget.portraitOnPageBuilder(context, model, child),
+                landspacePage: widget.landscapeOnPageBuilder(context, model, child),
               ),
       ),
     );

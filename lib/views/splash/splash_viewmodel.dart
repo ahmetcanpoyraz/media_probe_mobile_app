@@ -18,7 +18,7 @@ class SplashViewModel extends BaseViewModel {
       isInit = !isInit;
     }
     Future.delayed(
-      const Duration(milliseconds: 3500),
+      const Duration(milliseconds: 500),
       () {
         goHome();
       },
@@ -26,6 +26,6 @@ class SplashViewModel extends BaseViewModel {
   }
 
   Future<void> goHome() async {
-      NavigationService.instance.navigateToPageClear(path: NavigationConstants.homePage);
+    NavigationService.instance.navigateToPageClear(path: NavigationConstants.homePage);
   }
 }

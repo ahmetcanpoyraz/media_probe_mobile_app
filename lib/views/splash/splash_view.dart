@@ -4,6 +4,7 @@ import 'package:media_probe_mobile_app/core/constants/color_constants.dart';
 import 'package:media_probe_mobile_app/views/splash/splash_viewmodel.dart';
 import 'package:provider/provider.dart';
 import '../../../core/base/base_view/base_view.dart';
+part 'splash_widgets.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class SplashView extends StatelessWidget {
             child: Icon(
           Icons.ac_unit,
           size: 250.h,
-              color: ColorConstants.instance.kPrussianBlue,
+          color: ColorConstants.instance.kPrussianBlue,
         )),
       ),
       landscapeOnPageBuilder: (context, viewModel, _) => const SizedBox(),

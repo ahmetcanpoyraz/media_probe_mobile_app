@@ -1,4 +1,3 @@
-import '../../constants/user_constants.dart';
 import 'dart:async';
 import '../../init/navigation/navigation_service.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +5,9 @@ import 'package:flutter/material.dart';
 abstract class BaseViewModel extends ChangeNotifier {
   bool _isLoading = true;
   bool _isDisposed = false;
-  bool _isInitializeDone = false;
+  final bool _isInitializeDone = false;
   BuildContext? context;
   NavigationService navigation = NavigationService.instance;
-  UserConstant? userConstant = UserConstant.instance;
 
   FutureOr<void> _initState;
 
@@ -25,10 +23,11 @@ abstract class BaseViewModel extends ChangeNotifier {
 
   @override
   void dispose() {
+    super.dispose();
     changeStatus();
     _isDisposed = true;
-    //super.dispose();
   }
+
   //Getters
   FutureOr<void> get initState => _initState;
 

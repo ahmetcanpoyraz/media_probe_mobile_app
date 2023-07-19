@@ -9,7 +9,7 @@ class ColorConstants {
 
   /// app primary color
   Color deepCerulean = const Color(0xff007EA7);
-
+  Color kGreen = const Color(0xff09a270);
   Color kGeyser = const Color(0xffCCDBDC);
   Color kSinbad = const Color(0xff9AD1D4);
   Color kBermuda = const Color(0xff80CED7);

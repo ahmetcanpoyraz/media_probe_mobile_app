@@ -1,29 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/color_constants.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.system;
-
-  bool get isDarkMode {
-    if (themeMode == ThemeMode.system) {
-      final brightness = SchedulerBinding.instance.window.platformBrightness;
-      return brightness == Brightness.dark;
-    } else {
-      return themeMode == ThemeMode.dark;
-    }
-  }
-
-  void toggleTheme(bool isOn) {
-    themeMode = isOn ? ThemeMode.dark : ThemeMode.light;
-    notifyListeners();
-  }
 }
 
-
 ColorScheme _customColorScheme = ColorScheme(
-  brightness: Brightness.dark,
+  brightness: Brightness.light,
   primary: ColorConstants.instance.deepCerulean,
   onPrimary: ColorConstants.instance.kGeyser,
   secondary: ColorConstants.instance.kPrussianBlue,
@@ -41,88 +25,39 @@ ColorScheme _customColorScheme = ColorScheme(
 
 class MyThemes {
   static final darkTheme = ThemeData(
-    primarySwatch: Colors.red,
-    scaffoldBackgroundColor: ColorConstants.instance.alabaster,
+    primaryColor: ColorConstants.instance.deepCerulean,
     colorScheme: _customColorScheme,
-    iconTheme:
-        IconThemeData(color: ColorConstants.instance.kBermuda, opacity: 0.8),
     textTheme: TextTheme(
-      headline1: TextStyle(
+      displayLarge: TextStyle(
         fontSize: 20.sp,
-        color: ColorConstants.instance.kMineShaft,
-        fontWeight: FontWeight.w700,
-        //height: 1.2.sp,
+        color: ColorConstants.instance.kWhite,
       ),
-      headline2: TextStyle(
+      displayMedium: TextStyle(
         fontSize: 16.sp,
-        color: ColorConstants.instance.kGeyser,
-        fontWeight: FontWeight.w600,
+        color: ColorConstants.instance.kBlack,
       ),
-      headline3: TextStyle(
-        fontSize: 16.sp,
-        color: ColorConstants.instance.kPrussianBlue,
-        fontWeight: FontWeight.w600,
+      displaySmall: TextStyle(
+        fontSize: 14.sp,
+        color: ColorConstants.instance.kDarkGrey,
       ),
     ),
   );
 
   static final lightTheme = ThemeData(
-    primaryColor: ColorConstants.instance.deepCerulean,
-      scaffoldBackgroundColor: ColorConstants.instance.kPrussianBlue,
+      primaryColor: ColorConstants.instance.deepCerulean,
       colorScheme: _customColorScheme,
-      iconTheme: const IconThemeData(color: Colors.red, opacity: 0.8),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
           fontSize: 20.sp,
-          color: ColorConstants.instance.kMineShaft,
-          fontWeight: FontWeight.w700,
+          color: ColorConstants.instance.kWhite,
         ),
-        headline2: TextStyle(
-          fontSize: 18.sp,
-          color: Colors.white,
-          fontWeight: FontWeight.w700,
-        ),
-        headline3: TextStyle(
-            fontSize: 16.sp,
-            color: ColorConstants.instance.kGeyser,
-            fontWeight: FontWeight.w600,
-            height: 1.2.sp),
-        headline4: TextStyle(
+        displayMedium: TextStyle(
           fontSize: 16.sp,
-          color: ColorConstants.instance.kPrussianBlue,
-          fontWeight: FontWeight.w600,
+          color: ColorConstants.instance.kBlack,
         ),
-        headline5: TextStyle(
+        displaySmall: TextStyle(
           fontSize: 14.sp,
-          color: const Color(0xffF9F9F9),
-          fontWeight: FontWeight.w500,
-        ),
-        headline6: TextStyle(
-          fontSize: 12.sp,
-          color: const Color(0xff9AD1D4),
-          fontWeight: FontWeight.w500,
-        ),
-        subtitle1: TextStyle(
-          fontSize: 14.sp,
-          color: ColorConstants.instance.kPrussianBlue,
-          fontWeight: FontWeight.w600,
-        ),
-        subtitle2: TextStyle(
-          fontSize: 16.sp,
-          color: Colors.white,
-          fontWeight: FontWeight.w700,
-        ),
-        bodyText1:
-        TextStyle(
-          fontSize: 12.sp,
-          color: ColorConstants.instance.kPrussianBlue,
-          fontWeight: FontWeight.w500,
-        ),
-        bodyText2:
-        TextStyle(
-          fontSize: 10.sp,
           color: ColorConstants.instance.kDarkGrey,
-          fontWeight: FontWeight.w600,
         ),
       ));
 }

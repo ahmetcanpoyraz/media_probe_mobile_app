@@ -37,6 +37,11 @@ dependencies:
   network_to_file_image:
   provider:
   dartz:
+  cached_network_image: ^3.2.3
+  http:
+  html:
+  flutter_widget_from_html_core:
+
 
 dev_dependencies:
   flutter_test:

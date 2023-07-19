@@ -1,16 +1,6 @@
-# media_probe_mobile_app
+// MVVM Design Pattern kullanıldı.
 
-A new Flutter project.
+// İsteklerde, müşteri detay sayfasındaki makalenin hepsini görmek istiyor yazılmış ama gelen datanın içinde makale içeriği
+// yok sadece link var, ve bu linkteki html'i alabiliyorum ama html'i parçalayamadım sadece makale içeriği olarak o yüzden görüntüde biraz kötü gözüküyor.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

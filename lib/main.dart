@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:media_probe_mobile_app/core/constants/color_constants.dart';
 import 'package:provider/provider.dart';
 import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';
@@ -8,14 +9,13 @@ import 'core/init/provider/provider_manager.dart';
 import 'core/init/provider/theme_provider.dart';
 
 Future<void> main() async {
-  Provider.debugCheckInvalidValueType = null;
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-
-      statusBarColor: Colors.white, // Color for Android
-      statusBarBrightness: Brightness.dark // Dark == white status bar -- for IOS.
-  ));
-
   WidgetsFlutterBinding.ensureInitialized();
+  Provider.debugCheckInvalidValueType = null;
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarColor: ColorConstants.instance.kGreen, // Color for Android
+      statusBarBrightness: Brightness.dark // Dark == white status bar -- for IOS.
+      ));
+
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
